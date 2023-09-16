@@ -32,56 +32,55 @@ function WebgiViewer() {
     }
   }, []);
 
-  useEffect(() => {
-    const setupViewer = async () => {
-      const viewer = new ViewerApp({
-        canvas: canvasRef.current,
-      });
+  const setupViewer = async () => {
+    const viewer = new ViewerApp({
+      canvas: canvasRef.current,
+    });
 
-      const manager = await viewer.addPlugin(AssetManagerPlugin);
-      const camera = viewer.scene.activeCamera;
-      const position = camera.position;
-      const target = camera.target;
+    const manager = await viewer.addPlugin(AssetManagerPlugin);
+    const camera = viewer.scene.activeCamera;
+    const position = camera.position;
+    const target = camera.target;
 
-      await viewer.addPlugin(GBufferPlugin);
-      await viewer.addPlugin(new ProgressivePlugin(32));
-      await viewer.addPlugin(new TonemapPlugin(true));
-      await viewer.addPlugin(GammaCorrectionPlugin);
+    await viewer.addPlugin(GBufferPlugin);
+    await viewer.addPlugin(new ProgressivePlugin(32));
+    await viewer.addPlugin(new TonemapPlugin(true));
+    await viewer.addPlugin(GammaCorrectionPlugin);
 
-      await viewer.addPlugin(SSAOPlugin);
+    await viewer.addPlugin(SSAOPlugin);
 
-      await viewer.addPlugin(BloomPlugin);
+    await viewer.addPlugin(BloomPlugin);
 
-      viewer.renderer.refreshPipeline();
+    viewer.renderer.refreshPipeline();
 
-      await manager.addFromPath("scene-black.glb");
+    await manager.addFromPath("scene-black.glb");
 
-      viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
-      viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false });
+    viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
+    viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false });
 
-      window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 
-      let needUpdate = true;
-      const onUpdate = () => {
-        needUpdate = true;
-        viewer.setDirty();
-      };
-      viewer.addEventListener("preframe", () => {
-        if (needUpdate) {
-          camera.positionTargetUpdated(true);
-          needUpdate = false;
-        }
-      });
-      viewer.addEventListener("all-assets-loaded", () => {
-        memorizedScrollanimation(position, target, onUpdate);
-      });
+    let needUpdate = true;
+    const onUpdate = () => {
+      needUpdate = true;
+      viewer.setDirty();
     };
-
+    viewer.addEventListener("preframe", () => {
+      if (needUpdate) {
+        camera.positionTargetUpdated(true);
+        needUpdate = false;
+      }
+    });
+    viewer.addEventListener("all-assets-loaded", () => {
+      memorizedScrollanimation(position, target, onUpdate);
+    });
+  };
+  useEffect(() => {
     setupViewer();
   }, []);
   return (
-    <div>
-      <canvas ref={canvasRef} />
+    <div id="webgi-canvas-container">
+      <canvas id="webgi-canvas" ref={canvasRef} />
     </div>
   );
 }

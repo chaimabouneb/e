@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { initialize } from "next/dist/server/lib/render-server";
 import Footer from "../components/Footer";
-const WebbgiViewer = dynamic(() => import("../components/WebgiViewer"), {
+const WebgiViewer = dynamic(() => import("../components/WebgiViewer"), {
   ssr: false,
 });
 
@@ -62,7 +62,7 @@ const HomePage = () => {
       <Footer />
 
       <Basket />
-      <WebbgiViewer />
+      <WebgiViewer />
       {/**
       
       
