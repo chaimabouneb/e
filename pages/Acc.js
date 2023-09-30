@@ -6,9 +6,6 @@ const Acc = () => {
     <div>
       <Header />
       <H />
-      <canvas>
-        <h1>kil</h1>
-      </canvas>
     </div>
   );
 };

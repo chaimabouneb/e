@@ -10,24 +10,27 @@ interface GameCardProps {
   imageUrl: string;
   slug: string;
   price: number;
-  c: number;
 }
 const GameCard: FC<GameCardProps> = (props) => {
-  const { gameName, imageUrl, slug, price, c } = props;
+  const { gameName, imageUrl, slug, price } = props;
 
   return (
     <Link href={`/singleprod`}>
-      <section>
+      <section className="relative flex-col bg-white rounded-2xl snap-start snap-always shrink-0 mr-5 last:mr-0">
         <Image
           className="scale-90 hover:scale-100 transition-transform duration-300 object-fill w-full"
           src={imageUrl}
           alt={gameName}
           width={100}
-          height={50}
+          height={100}
         />
+
         <div className="p-5 flex flex-col gap-3 ">
           <div className="flex items-center gap-2">
-            <span className="badge"> stock ready</span>
+            <span className="badge">
+              {" "}
+              <span className="text-green-500">in stock</span>
+            </span>
             <span className="badge">official store</span>
           </div>
 

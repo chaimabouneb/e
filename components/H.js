@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-
+import ListProd from "../components/ListProd";
+import Carousel from "../components/Carousel-prod";
+import Footer from "../components/Footer";
 const H = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,20 +66,23 @@ const H = () => {
   });
   return (
     <section>
-      <div className="h">
-        <h1 className="p-2 pt-0 text-white text-[15rem] ">Airpods Max</h1>
-        <h1 className="font-semibold flex items-end text-[5rem] p-2 pt-0 bg-gradient-to-r from-[#ffb6ff] to-[#b344ff] bg-clip-text text-transparent ">
+      <div className="h2">
+        <h2 className="font-semibold flex items-end text-[5rem] p-2 pt-0 bg-gradient-to-r from-[#ffb6ff] to-[#b344ff] bg-clip-text text-transparent ">
           Airpods Max
+        </h2>
+      </div>
+
+      <div className="h-screen bg-transparent" />
+      <div className="  h-screen  ">
+        <h1 className=" font-semibold  text-[5rem]  bg-gradient-to-r from-[#ffb6ff] to-[#b344ff] bg-clip-text text-transparent ">
+          Brows Our Accessories.
         </h1>
 
-        <canvas id="hero-lightpass" className="canvas" />
-        <section>
-          <h1>heloo</h1>
-        </section>
+        <ListProd />
+        <Carousel />
+        <Footer />
       </div>
-      <div>
-        <h1>bliiiz</h1>
-      </div>
+      <canvas id="hero-lightpass" className="canvas" />
     </section>
   );
 };

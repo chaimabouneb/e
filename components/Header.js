@@ -94,25 +94,29 @@ function Header() {
               <a href="#" class="link-logo"></a>
             </li>
             <li>
-              <a href="/Acc">Laptops</a>
+              <a href="/Laptops">Laptops</a>
             </li>
             <li>
-              <a href="#">Phones</a>
+              <a href="/SmartPhones">SmartPhones</a>
             </li>
             <li>
-              <a href="#">Tablets</a>
+              <a href="/Tablets">Tablets</a>
             </li>
             <li>
-              <a href="#">Watch</a>
+              <a href="/SmartWatch">SmartWatch</a>
             </li>
             <li>
-              <a href="/Acc">Accessories</a>
+              <a href="/Sound">SoundDevices</a>
+            </li>
+
+            <li>
+              <a href="/FlashDisk">Flashdisks</a>
             </li>
             <li>
-              <a href="#">offres</a>
+              <a href="/PowerBank">PowerBanks</a>
             </li>
             <li>
-              <a href="#">Support</a>
+              <a href="/Offres">Offres</a>
             </li>
             <li>
               <a href="#" class="link-search"></a>
@@ -127,7 +131,7 @@ function Header() {
           <div class="link-search"></div>
           <div class="search-bar">
             <form action="">
-              <input type="text" placeholder="Search apple.com" />
+              <input type="text" placeholder="Search store.com" />
             </form>
           </div>
           <div class="link-close"></div>
@@ -136,19 +140,14 @@ function Header() {
             <h2>Quick Links</h2>
             <ul>
               <li>
-                <a href="#">Visiting an Apple Store FAQ</a>
+                <a href="#">Latest SmartPhones</a>
               </li>
               <li>
-                <a href="#">Shop Apple Store Online</a>
+                <a href="#">Latest Airpods</a>
               </li>
+
               <li>
-                <a href="#">Accessories</a>
-              </li>
-              <li>
-                <a href="#">AirPods</a>
-              </li>
-              <li>
-                <a href="#">AirTag</a>
+                <a href="#">Chargers</a>
               </li>
             </ul>
           </div>
@@ -158,7 +157,7 @@ function Header() {
           <div class="link-search"></div>
           <div class="search-bar">
             <form action="">
-              <input type="text" placeholder="Search apple.com" />
+              <input type="text" placeholder="Search Store.com" />
             </form>
           </div>
           <span class="cancel-btn">Cancel</span>
@@ -167,19 +166,14 @@ function Header() {
             <h2>Quick Links</h2>
             <ul>
               <li>
-                <a href="#">Visiting an Apple Store FAQ</a>
+                <a href="#">Latest SmartPhones</a>
               </li>
               <li>
-                <a href="#">Shop Apple Store Online</a>
+                <a href="#">Latest Airpods</a>
               </li>
+
               <li>
-                <a href="#">Accessories</a>
-              </li>
-              <li>
-                <a href="#">AirPods</a>
-              </li>
-              <li>
-                <a href="#">AirTag</a>
+                <a href="#">Chargers</a>
               </li>
             </ul>
           </div>
