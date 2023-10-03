@@ -1,28 +1,3 @@
-import React from "react";
-
-import H from "../components/Header";
-import HeroOffres from "../components/HeroOfrres";
-import Herophone from "../components/Herophone";
-import Gridof from "../components/Gridof";
-import Stream from "../components/Stream";
-import style from "../style";
-const Offres = () => {
-  return (
-    <div className=" w-full  ">
-      {" "}
-      <H />
-      <Stream />
-      <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Gridof />/
-        </div>
-        /
-      </div>
-    </div>
-  );
-};
-
-export default Offres;
 const styles = {
   boxWidth: "xl:max-w-[1280px] w-full",
 
@@ -51,3 +26,5 @@ export const layout = {
 
   sectionInfo: `flex-1 ${styles.flexStart} flex-col`,
 };
+
+export default styles;

@@ -21,7 +21,7 @@ import {
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { scrollAnimation } from "../lib/scroll-animation.js";
+import { scrollAnimation } from "../lib/scroll-animation";
 gsap.registerPlugin(ScrollTrigger);
 function WebgiViewer() {
   const canvasRef = useRef(null);
@@ -32,7 +32,7 @@ function WebgiViewer() {
     }
   }, []);
 
-  const setupViewer = async () => {
+  const setupViewer = useCallback(async () => {
     const viewer = new ViewerApp({
       canvas: canvasRef.current,
     });
@@ -61,20 +61,22 @@ function WebgiViewer() {
     window.scrollTo(0, 0);
 
     let needUpdate = true;
+
     const onUpdate = () => {
       needUpdate = true;
       viewer.setDirty();
     };
+
     viewer.addEventListener("preframe", () => {
       if (needUpdate) {
         camera.positionTargetUpdated(true);
         needUpdate = false;
       }
     });
-    viewer.addEventListener("all-assets-loaded", () => {
-      memorizedScrollanimation(position, target, onUpdate);
-    });
-  };
+
+    memorizedScrollanimation(position, target, onUpdate);
+  }, []);
+
   useEffect(() => {
     setupViewer();
   }, []);
