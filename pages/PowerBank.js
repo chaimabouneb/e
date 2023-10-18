@@ -1,7 +1,14 @@
+"use client";
 import React from "react";
-
-const PowerBank = () => {
-  return <div>PowerBank</div>;
+import H from "../components/H";
+import Header from "../components/Header";
+const pb = () => {
+  return (
+    <div>
+      <Header />
+      <H />
+    </div>
+  );
 };
 
-export default PowerBank;
+export default pb;

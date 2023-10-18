@@ -1,7 +1,14 @@
+"use client";
 import React from "react";
-
-const SmartPhones = () => {
-  return <div>SmartPhones</div>;
+import H from "../components/H";
+import Header from "../components/Header";
+const sp = () => {
+  return (
+    <div>
+      <Header />
+      <H />
+    </div>
+  );
 };
 
-export default SmartPhones;
+export default sp;

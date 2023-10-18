@@ -1,17 +1,55 @@
 import React from "react";
-
-const Prod = () => {
+import { faheart } from "react-icons/fa";
+import StarRatings from "react-star-ratings";
+const Prod = ({ image, content, price, name }) => {
   return (
-    <div
-      className="w-fit h-[300px] text-black p-4 border border-gary-300
-      rounded-lg group overflow-hidden "
-    >
-      <div className="w-[200px] relative">
-        <img
-          className="w-[300px] h-[260px]  scale-90 hover:scale-100 transition-transform duration-300"
-          src="https://images.unsplash.com/photo-1612444530582-fc66183b16f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80"
-        />
-      </div>{" "}
+    <div className="min-h-[500px] z-0">
+      <div className=" relative bg-white p-5  rounded-md ">
+        <div className="pc">
+          <img src="/iphone.png" alt="" className=" im" />
+        </div>
+
+        <div className="w-[100%] p-5 flex flex-col gap-3 ">
+          <div className="flex items-center gap-2">
+            <span className="badge">
+              {" "}
+              <span className="text-green-500">in stock</span>
+            </span>
+            <span className="badge">official store</span>
+          </div>
+
+          <h2 className="prodect-title" title="Best Headphones">
+            Name
+          </h2>
+          <div>
+            <span className="text-xl font-bold">4455 $</span>
+            <div className="flex items-center gap-2 mt-1">
+              <span className="text-sm line-through opacity-50">2000 $</span>
+              <span className="discount-percentage">save 20%</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center space-x-2 mb-2">
+            <div className="ratings">
+              <StarRatings
+                rating={5}
+                starRatedColor="#ffb829"
+                numberOfStars={5}
+                starDimension="18px"
+                starSpacing="1px"
+                name="rating"
+              />
+            </div>
+            <span className="text-yellow-500">{5}</span>
+          </div>
+
+          <div className="flex flex-wrap gap-2 ">
+            {/**<Link href="/" className="link2">
+            Learn More
+          </Link>*/}
+            <button className="button-primary">add to cart</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

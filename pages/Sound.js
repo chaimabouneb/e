@@ -1,7 +1,13 @@
 import React from "react";
-
-const Sound = () => {
-  return <div>Sound</div>;
+import H from "../components/H";
+import Header from "../components/Header";
+const s = () => {
+  return (
+    <div>
+      <Header />
+      <H />
+    </div>
+  );
 };
 
-export default Sound;
+export default s;

@@ -74,10 +74,6 @@ const H = () => {
 
       <div className="h-screen bg-transparent" />
       <div className="  h-screen  ">
-        <h1 className=" font-semibold  text-[5rem]  bg-gradient-to-r from-[#ffb6ff] to-[#b344ff] bg-clip-text text-transparent ">
-          Brows Our Accessories.
-        </h1>
-
         <ListProd />
         <Carousel />
         <Footer />

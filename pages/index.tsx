@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Header, Landing, Trending, Offres } from "../components/index";
 import CartCheckOut from "../components/CartCheckOut";
@@ -9,11 +10,12 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { initialize } from "next/dist/server/lib/render-server";
 import Footer from "../components/Footer";
-const WebgiViewer = dynamic(() => import("../components/WebgiViewer"), {
-  ssr: false,
-});
 
-const HomePage = () => {
+export default function HomePage() {
+  const WebgiViewer = dynamic(() => import("../components/WebgiViewer"), {
+    ssr: false,
+  });
+
   const [width, setwidth] = useState(0);
   const carousel = useRef();
 
@@ -25,14 +27,12 @@ const HomePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
       <main className="relative  bg-[#E7ECEE]">
         <Landing />
       </main>
       <Offres />
       <Trending />
       <Carouselprod />
-      <Footer />
 
       <Basket />
       <WebgiViewer />
@@ -43,6 +43,6 @@ const HomePage = () => {
      **/}
     </>
   );
-};
-export default HomePage;
+}
+
 // etc

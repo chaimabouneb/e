@@ -43,7 +43,7 @@ const Footer = () => {
         <div class="footer__links">
           <div class="footer__links--column">
             <div class="footer__links--column-title">Shop and Learn</div>
-            <a href="/Laptops">Laptops</a>
+            <a href="/page">Laptops</a>
             <a href="/SmartPhones">SmartPhones</a>
             <a href="/Tablets">Tablets</a>
             <a href="/SmartWatch">SmartWatch</a>
@@ -54,12 +54,12 @@ const Footer = () => {
 
           <div class="footer__links--column">
             <div class="footer__links--column-title">Apple Store</div>
-            <a href="">Find a Store</a>
+            <a href="/Contact">Contact Us</a>
           </div>
         </div>
 
         <div class="footer__more">
-          More ways to shop: <a href="">Find an Apple Store</a> or
+          More ways to shop: <a href="/Contact">Find an Apple Store</a> or
           <a href="">other retailer</a> near you. Or call 1-800-MY-APPLE.
         </div>
 

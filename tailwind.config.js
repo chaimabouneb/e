@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      cursor: {
+        fancy:
+          "url(https://cdn-icons-png.flaticon.com/128/1612/1612818.png), pointer",
+      },
       colors: {
         primary: "#00040f",
         secondary: "#00f6ff",

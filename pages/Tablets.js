@@ -1,7 +1,13 @@
 import React from "react";
-
-const Tablets = () => {
-  return <div>Tablets</div>;
+import H from "../components/H";
+import Header from "../components/Header";
+const t = () => {
+  return (
+    <div>
+      <Header />
+      <H />
+    </div>
+  );
 };
 
-export default Tablets;
+export default t;

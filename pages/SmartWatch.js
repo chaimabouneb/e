@@ -1,7 +1,14 @@
+"use client";
 import React from "react";
-
-const Smartwatch = () => {
-  return <div>Smartwatch</div>;
+import H from "../components/H";
+import Header from "../components/Header";
+const sw = () => {
+  return (
+    <div>
+      <Header />
+      <H />
+    </div>
+  );
 };
 
-export default Smartwatch;
+export default sw;
