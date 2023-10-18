@@ -1,4 +1,5 @@
-"use client";
+{
+  /*"use client";
 import { useDispatch, useSelector } from "react-redux";
 import CartSidebar from "./CartSideBar";
 import Header from "./Header";
@@ -32,4 +33,5 @@ export default function App({ children }) {
       <CartSidebar />
     </div>
   );
+}*/
 }

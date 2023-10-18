@@ -1,48 +1,17 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import { Header, Landing, Trending, Offres } from "../components/index";
-import CartCheckOut from "../components/CartCheckOut";
-import Head from "next/head";
-import Basket from "../components/Basket";
-import Carouselprod from "../components/Carousel-prod";
-import type { NextPage } from "next";
-import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { initialize } from "next/dist/server/lib/render-server";
-import Footer from "../components/Footer";
-
-export default function HomePage() {
-  const WebgiViewer = dynamic(() => import("../components/WebgiViewer"), {
-    ssr: false,
-  });
-
-  const [width, setwidth] = useState(0);
-  const carousel = useRef();
-
+import { data } from "../utils/data";
+import ProductItem from "../components/ProductItem";
+import Carti from "../components/Carti";
+import { useState } from "react";
+export default function index(props) {
+  const { products } = data;
+  const { onAdd } = props;
   return (
-    <>
-      <Head>
-        {" "}
-        <title>Sumsung Redesign</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="relative  bg-[#E7ECEE]">
-        <Landing />
-      </main>
-      <Offres />
-      <Trending />
-      <Carouselprod />
-
-      <Basket />
-      <WebgiViewer />
-      {/**
-      
-      
-
-     **/}
-    </>
+    <div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {products.map((product) => (
+          <ProductItem key={product.id} product={product} onAdd={onAdd} />
+        ))}
+      </div>
+    </div>
   );
 }
-
-// etc

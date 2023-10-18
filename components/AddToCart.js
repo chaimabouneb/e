@@ -1,8 +1,9 @@
-"use client";
+{
+  /*"use client";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import { addToCart } from "@/redux/slices/cartSlice";
+import { addToCart } from "../redux/slices/cartSlice";
 
 export default function AddToCart({
   product,
@@ -63,4 +64,5 @@ export default function AddToCart({
       </div>
     </>
   );
+}*/
 }
