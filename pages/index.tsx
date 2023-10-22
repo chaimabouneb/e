@@ -1,17 +1,33 @@
-import { data } from "../utils/data";
-import ProductItem from "../components/ProductItem";
-import Carti from "../components/Carti";
-import { useState } from "react";
-export default function index(props) {
-  const { products } = data;
-  const { onAdd } = props;
+import React, { useContext, useState, useEffect } from "react";
+import { Header, Landing, Trending, Offres } from "../components/index";
+import CartCheckOut from "../components/CartCheckOut";
+import Head from "next/head";
+import { Store } from "../utils/Store";
+import Carousel from "../components/Carousel-prod";
+import Basket from "../components/Basket";
+import dynamic from "next/dynamic";
+import Layout from "../components/Layout";
+import Footer from "../components/Footer";
+//import WebgiViewer from "../components/WebgiViewer.js";
+const WebgiViewer = dynamic(() => import("../components/WebgiViewer"), {
+  ssr: false, // Disable server-side rendering for this component
+});
+
+const HomePage = () => {
+  const { state, dispatch } = useContext(Store);
+  const { cart } = state;
   return (
-    <div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} onAdd={onAdd} />
-        ))}
-      </div>
-    </div>
+    <>
+      <Layout>
+        <Landing />
+        <Offres />
+        <Trending />
+        <WebgiViewer />
+        <Carousel />
+        <Footer />
+      </Layout>
+    </>
   );
-}
+};
+export default HomePage;
+// etc

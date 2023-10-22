@@ -5,7 +5,7 @@ import StarRatings from "react-star-ratings";
 import { useTransition, animated } from "@react-spring/web";
 import { useState } from "react";
 
-function Filters() {
+function Filters(category) {
   let queryParams;
 
   function checkHandler(checkBoxType, checkBoxValue) {

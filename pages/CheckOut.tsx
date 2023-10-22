@@ -1,7 +1,9 @@
 import React from "react";
 import Head from "next/head";
+import Carousel from "../components/Carousel";
 import Header from "../components/Header";
 import CartCheckOut from "../components/CartCheckOut";
+import Footer from "../components/Footer";
 function CheckOut() {
   return (
     <div className=" bg-gray-200">
@@ -19,6 +21,8 @@ function CheckOut() {
         </div>
       </div>
       <CartCheckOut />
+      <Carousel />
+      <Footer />
     </div>
   );
 }

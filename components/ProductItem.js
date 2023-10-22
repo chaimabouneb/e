@@ -2,73 +2,47 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ProductRate from "./ProductRate";
-
-export default function ProductItem(props) {
-  const { product, onAdd } = props;
-  return (
-    <div className="mb-5 block rounded-lg border border-gary-200 shadow-md">
-      <Link href={`/product/${product.id}`}>
-        <Image
-          src={product.image}
-          width={400}
-          height={400}
-          alt={product.name}
-          className="rounded shadow object-cover h-96 w-full"
-        />
-      </Link>
-      <div className="flex flex-col items-center justify-center p-5">
-        <Link href={`/product/${product.id}`}>
-          <h2 className="text-lg">{product.name}</h2>
-        </Link>
-        <ProductRate rate={product.rating} count={product.numReviews} />
-        <p className="mb-2">{product.brand}</p>
-        <p>${product.price}</p>
-        <button onClick={() => onAdd(product)}>ad cart</button>
-        {/* <AddToCart
-          showQty={false}
-          product={product}
-          increasePerClick={true}
-          redirect={false}
-  />*/}
-      </div>
-    </div>
-  );
-}
-
-{
-  /*import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import ProductRate from "./ProductRate";
-import AddToCart from "./AddToCart";
-
+import Button from "./Button";
 export default function ProductItem({ product }) {
   return (
-    <div className="mb-5 block rounded-lg border border-gary-200 shadow-md ">
-      <Link href={`/product/${product.id}`}>
-        <Image
-          src={product.image}
-          width={400}
-          height={400}
-          alt={product.name}
-          className="rounded shadow object-cover h-96 w-full"
-        />
-      </Link>
-      <div className="flex flex-col items-center justify-center p-5">
-        <Link href={`/product/${product.id}`}>
-          <h2 className="text-lg">{product.name}</h2>
-        </Link>
-        <ProductRate rate={product.rating} count={product.numReviews} />
-        <p className="mb-2">{product.brand}</p>
-        <p>${product.price}</p>
-        <AddToCart
-          showQty={false}
-          product={product}
-          increasePerClick={true}
-          redirect={false}
-        />
+    <div className="min-h-[500px] z-0 ">
+      <div className=" relative bg-white p-5  rounded-md ">
+        <div className="pc">
+          <Link href={`/product/${product.slug}`}>
+            <img src={product.image} alt={product.name} className=" im" />
+          </Link>
+        </div>
+        <div className="w-[100%] p-1 flex flex-col gap-3 min-h-[70px] min-w-[50px]">
+          <div className="flex items-center gap-2">
+            <span className="badge">
+              {" "}
+              <div>
+                {product.isFeatured > 0 ? (
+                  <span className="text-green-500">in stock</span>
+                ) : (
+                  "unavailable"
+                )}
+              </div>
+            </span>
+          </div>
+          <Link href={`/product/${product.slug}`}>
+            <h2 className="prodect-title text-xl" title="Best Headphones">
+              {product.name}
+            </h2>
+          </Link>
+          <div>
+            <span className="text-xl font-bold">{product.price}$</span>
+            <div className="flex items-center gap-2 mt-1">
+              <span className="text-sm line-through opacity-50">$44</span>
+              <span className="discount-percentage">save 20%</span>
+            </div>
+          </div>
+
+          <ProductRate rate={product.rating} count={product.numReviews} />
+
+          <Button title="Add To Cart" />
+        </div>
       </div>
     </div>
   );
-}*/
 }

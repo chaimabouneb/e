@@ -1,4 +1,5 @@
-import React from "react";
+{
+  /*ort React from "react";
 
 function Carti(props) {
   const { cartItems, onAdd, onRemove } = props;
@@ -26,3 +27,5 @@ function Carti(props) {
 }
 
 export default Carti;
+*/
+}

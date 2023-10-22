@@ -91,29 +91,29 @@ function Header() {
 
           <ul class="desktop-nav">
             <li>
-              <a href="#" class="link-logo"></a>
+              <a href="/" class="link-logo"></a>
             </li>
             <li>
-              <a href="/Laptops">Laptops</a>
+              <a href={`/catego/laptop`}>Laptops</a>
             </li>
             <li>
-              <a href="/SmartPhones">SmartPhones</a>
+              <a href={`/catego/phone`}>SmartPhones</a>
             </li>
             <li>
-              <a href="/Tablets">Tablets</a>
+              <a href={`/catego/tablet`}>Tablets</a>
             </li>
             <li>
-              <a href="/SmartWatch">SmartWatch</a>
+              <a href={`/catego/smart watch`}>SmartWatch</a>
             </li>
             <li>
-              <a href="/Sound">SoundDevices</a>
+              <a href={`/catego/sound`}>SoundDevices</a>
             </li>
 
             <li>
-              <a href="/FlashDisk">Flashdisks</a>
+              <a href={`/catego/flash Disk`}>Flashdisks</a>
             </li>
             <li>
-              <a href="/PowerBank">PowerBanks</a>
+              <a href={`/catego/power Bank`}>PowerBanks</a>
             </li>
             <li>
               <a href="/Offres">Offres</a>

@@ -85,7 +85,7 @@ function App() {
   }, [currentSlide]);
 
   return (
-    <div className=" space-y-20 bg-gray-200 pt-10 font-sans p-3 ">
+    <div className=" space-y-20 bg-gray-200 pt-10 font-sans p-3  spin">
       <div className="space-y-5">
         <h2 className="font-semibold text-6xl text-center max-w-[800px] mx-auto ">
           Discover Our Other Devices.

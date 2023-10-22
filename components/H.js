@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import ListProd from "../components/ListProd";
-import Carousel from "../components/Carousel-prod";
-import Footer from "../components/Footer";
+
 const H = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,18 +65,6 @@ const H = () => {
   });
   return (
     <section>
-      <div className="h2">
-        <h2 className="font-semibold flex items-end text-[5rem] p-2 pt-0 bg-gradient-to-r from-[#ffb6ff] to-[#b344ff] bg-clip-text text-transparent ">
-          Airpods Max
-        </h2>
-      </div>
-
-      <div className="h-screen bg-transparent" />
-      <div className="  h-screen  ">
-        <ListProd />
-        <Carousel />
-        <Footer />
-      </div>
       <canvas id="hero-lightpass" className="canvas" />
     </section>
   );

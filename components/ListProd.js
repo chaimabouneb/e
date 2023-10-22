@@ -1,13 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
-import StarRatings from "react-star-ratings";
 import Filters from "./Filters";
-import Prod from "./Prod";
 import Pagination from "./customPagination";
-
-const ListProd = () => {
+import data from "../utils/data";
+import ProductItem from "./ProductItem";
+const ListProd = (category) => {
+  const { categor } = category;
   const [keyword, setkeyword] = useState("");
   const router = useRouter();
   const submitHandler = () => {
@@ -38,20 +37,18 @@ const ListProd = () => {
         <div className="my-5">
           <Filters />
           <div className="min-h-[100px]" />
-          <ul
+          <div
             className="w-[100%] gap-3 p-3  grid xl:grid-cols-4
            gird-rows-2 xs:p-12 xs:grid-cols-1 ss:grid-cols-2 md:grid-cols-4  lg:grid-col-4 sm:grid-cols-2"
           >
-            <Prod image={"/iphone.png"} />
-            <Prod image={"/lap1.png"} />
-            <Prod />
-            <Prod />
-            <Prod />
-            <Prod />
-            <Prod />
-            <Prod />
-            <Prod />
-          </ul>
+            {data.products.map((product) =>
+              ({ ...product.category }) == categor ? (
+                <ProductItem product={product} key={product.slug}></ProductItem>
+              ) : (
+                "none"
+              )
+            )}
+          </div>
         </div>
       </div>
       <Pagination />{" "}

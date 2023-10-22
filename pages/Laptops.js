@@ -1,13 +1,7 @@
-"use client";
 import React from "react";
-import H from "../components/H";
-import Header from "../components/Header";
+import Layout from "../components/Layout";
 const Lap = () => {
-  return (
-    <div>
-      <H />
-    </div>
-  );
+  return <Layout />;
 };
 
 export default Lap;
